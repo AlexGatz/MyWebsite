@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 const bodyStyle = {
-  fontFamily: "Lato",
+  fontFamily: "Lato, sans-sarif",
   transition: "background - color .5s"
 };
 
@@ -24,7 +24,7 @@ const sideNavBarOpen = {
   top: "0",
   left: "0",
   backgroundColor: "#111",
-  opacity: "0.5",
+  opacity: "0.7",
   overflowX: "hidden",
   transition: "0.5s",
   paddingTop: "60px"
@@ -36,7 +36,8 @@ const closeButton = {
   right: "25px",
   fontSize: "36px",
   marginLeft: "50px",
-  cursor: "pointer"
+  cursor: "pointer",
+  color: "#f2f2f2"
 };
 
 const sideNavLinks = {
@@ -49,6 +50,7 @@ const sideNavLinks = {
 };
 
 const hamburgerButton = {
+  transition: "all 1.6s",
   fontSize: "30px",
   cursor: "pointer"
 };
@@ -60,7 +62,7 @@ const hamburgerButtonFaded = {
 
 // The Header creates links that can be used to navigate
 // between routes.
-class Header extends Component {
+class Menu extends Component {
   constructor() {
     super();
     this.state = { open: true };
@@ -114,4 +116,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Menu;
