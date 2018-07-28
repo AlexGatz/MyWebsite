@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 const bodyStyle = {
@@ -10,6 +10,16 @@ const sideNavBar = {
   height: "100%",
   width: "0",
   position: "fixed",
+  top: "0",
+  left: "0",
+  overflowX: "hidden",
+  transition: "0.5s"
+};
+
+const sideNavBarOpen = {
+  height: "100%",
+  width: "150px",
+  position: "fixed",
   zIndex: "1",
   top: "0",
   left: "0",
@@ -18,6 +28,15 @@ const sideNavBar = {
   overflowX: "hidden",
   transition: "0.5s",
   paddingTop: "60px"
+};
+
+const closeButton = {
+  position: "absolute",
+  top: "0",
+  right: "25px",
+  fontSize: "36px",
+  marginLeft: "50px",
+  cursor: "pointer"
 };
 
 const sideNavLinks = {
@@ -34,32 +53,65 @@ const hamburgerButton = {
   cursor: "pointer"
 };
 
+const hamburgerButtonFaded = {
+  transition: "all 0.2s",
+  opacity: "0"
+};
+
 // The Header creates links that can be used to navigate
 // between routes.
-const Header = () => (
-  <header>
-    <body style={bodyStyle}>
-      {/*TODO: Add CSS and JS for opening and closing menu*/}
-      <div style={sideNavBar}>
-        <a style={sideNavLinks}>&times;</a>
-        <a style={sideNavLinks}>
-          <Link to="/">Home</Link>
-        </a>
-        <a style={sideNavLinks}>
-          <Link to="/about">About</Link>
-        </a>
-        <a style={sideNavLinks}>
-          <Link to="/contact">Contact</Link>
-        </a>
-      </div>
+class Header extends Component {
+  constructor() {
+    super();
+    this.state = { open: true };
+  }
 
-      <div id="unknown">
-        <span style={hamburgerButton} onClick="">
-          &#9776;
-        </span>
-      </div>
-    </body>
-  </header>
-);
+  openNav() {
+    this.setState({ open: !this.state.open });
+  }
+  render() {
+    let sideNavStyle = this.state.open ? sideNavBar : sideNavBarOpen;
+    let hamburgerButtonStyle = this.state.open
+      ? hamburgerButton
+      : hamburgerButtonFaded;
+
+    return (
+      <header>
+        <body style={bodyStyle}>
+          {/*TODO: Add CSS and JS for opening and closing menu*/}
+          <div style={sideNavStyle}>
+            <a style={closeButton} onClick={this.openNav.bind(this)}>
+              &times;
+            </a>
+            <a>
+              <Link style={sideNavLinks} to="/">
+                Home
+              </Link>
+            </a>
+            <a>
+              <Link style={sideNavLinks} to="/about">
+                About
+              </Link>
+            </a>
+            <a>
+              <Link style={sideNavLinks} to="/contact">
+                Contact
+              </Link>
+            </a>
+          </div>
+
+          <div id="unknown">
+            <span
+              style={hamburgerButtonStyle}
+              onClick={this.openNav.bind(this)}
+            >
+              &#9776;
+            </span>
+          </div>
+        </body>
+      </header>
+    );
+  }
+}
 
 export default Header;
