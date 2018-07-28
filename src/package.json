@@ -1,0 +1,12 @@
+{
+  "name": "justamess",
+  "version": "1.0.0",
+  "description": "Just threw this together using the simple react router sandbox for my own page",
+  "keywords": [],
+  "main": "index.js",
+  "dependencies": {
+    "react-router-dom": "4.1.1",
+    "react-dom": "15.5.3",
+    "react": "15.5.3"
+  }
+}
