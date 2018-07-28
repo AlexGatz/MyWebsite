@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-const bodyStyle = {
-  fontFamily: "Lato, sans-sarif",
-  transition: "background - color .5s"
-};
-
 const sideNavBar = {
   height: "100%",
   width: "0",
@@ -78,40 +73,34 @@ class Menu extends Component {
       : hamburgerButtonFaded;
 
     return (
-      <header>
-        <body style={bodyStyle}>
-          {/*TODO: Add CSS and JS for opening and closing menu*/}
-          <div style={sideNavStyle}>
-            <a style={closeButton} onClick={this.openNav.bind(this)}>
-              &times;
-            </a>
-            <a>
-              <Link style={sideNavLinks} to="/">
-                Home
-              </Link>
-            </a>
-            <a>
-              <Link style={sideNavLinks} to="/about">
-                About
-              </Link>
-            </a>
-            <a>
-              <Link style={sideNavLinks} to="/contact">
-                Contact
-              </Link>
-            </a>
-          </div>
+      <div>
+        <div style={sideNavStyle}>
+          <a style={closeButton} onClick={this.openNav.bind(this)}>
+            &times;
+          </a>
+          <a>
+            <Link style={sideNavLinks} to="/">
+              Home
+            </Link>
+          </a>
+          <a>
+            <Link style={sideNavLinks} to="/about">
+              About
+            </Link>
+          </a>
+          <a>
+            <Link style={sideNavLinks} to="/contact">
+              Contact
+            </Link>
+          </a>
+        </div>
 
-          <div id="unknown">
-            <span
-              style={hamburgerButtonStyle}
-              onClick={this.openNav.bind(this)}
-            >
-              &#9776;
-            </span>
-          </div>
-        </body>
-      </header>
+        <div id="unknown">
+          <span style={hamburgerButtonStyle} onClick={this.openNav.bind(this)}>
+            &#9776;
+          </span>
+        </div>
+      </div>
     );
   }
 }
