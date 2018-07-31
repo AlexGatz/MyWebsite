@@ -3,7 +3,7 @@ import "./Home.css";
 
 const Home = () => (
   <div>
-    <h1 className="homeTitle">Alex Gatz </h1>
+    <h1 className="homeTitle">I'm Alex Gatz </h1>
   </div>
 );
 

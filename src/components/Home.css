@@ -1,5 +1,18 @@
 .homeTitle {
-  font-size: 50px;
+  font-size: 90px;
   text-align: center;
   color: rgb(0, 230, 0);
+  opacity: 0.8;
+  animation: glow 1s ease-in infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    border-color: rgb(0, 255, 0);
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+  }
+  100% {
+    border-color: rgb(0, 190, 0);
+    text-shadow: 0 0 50px rgba(0, 255, 0, 0.781);
+  }
 }

@@ -3,6 +3,9 @@
 body {
   font-family: "Atomic Age";
   background-color: rgb(38, 38, 38);
+  background-image: url("https://uploads.codesandbox.io/uploads/user/d9d5cefe-e7a3-4c81-9c8a-bbf46cd15d18/NoUC-pexels-photo-276092.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .sideNavBar {
@@ -56,16 +59,12 @@ body {
   color: #bebebe;
 }
 
-.sideNavLinks:active {
-  color: rgb(0, 230, 0);
-}
-
 .hamburgerButton {
   transition: all 1.6s;
   font-size: 30px;
   cursor: pointer;
-  color: rgb(0, 230, 0);
-  opacity: 0.7;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 30px;
 }
 .hamburgerButtonFaded {
   transition: all 0.2s;
@@ -80,4 +79,15 @@ body {
 .marginMoved {
   transition: all 0.2s;
   margin-left: 165px;
+}
+
+@keyframes darkGlow {
+  0% {
+    border-color: rgb(0, 0, 0);
+    text-shadow: 0 0 0px rgb(0, 0, 0);
+  }
+  100% {
+    border-color: rgb(0, 2, 0);
+    text-shadow: 0 0 20px rgb(0, 0, 0);
+  }
 }
