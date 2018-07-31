@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Main from "./Main";
 import "./App.css";
 
+import { Parallax } from "react-scroll-parallax";
+
 class App extends Component {
   constructor() {
     super();
@@ -22,7 +24,7 @@ class App extends Component {
     let marginStyle = this.state.open ? "marginLeft" : "marginMoved";
 
     return (
-      <body>
+      <div>
         <div className={sideNavStyle}>
           <a className="closeButton" onClick={this.openNav.bind(this)}>
             &times;
@@ -56,7 +58,7 @@ class App extends Component {
             <Main />
           </div>
         </div>
-      </body>
+      </div>
     );
   }
 }
