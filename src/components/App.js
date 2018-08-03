@@ -29,21 +29,15 @@ class App extends Component {
           <a className="closeButton" onClick={this.openNav.bind(this)}>
             &times;
           </a>
-          <a>
-            <Link className="sideNavLinks" to="/">
-              Home
-            </Link>
-          </a>
-          <a>
-            <Link className="sideNavLinks" to="/about">
-              About
-            </Link>
-          </a>
-          <a>
-            <Link className="sideNavLinks" to="/contact">
-              Contact
-            </Link>
-          </a>
+          <Link className="sideNavLinks" to="/">
+            Home
+          </Link>
+          <Link className="sideNavLinks" to="/about">
+            About
+          </Link>
+          <Link className="sideNavLinks" to="/contact">
+            Contact
+          </Link>
         </div>
 
         <div>

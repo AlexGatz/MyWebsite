@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Atomic Age");
-
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0%;
+}
 body {
   font-family: "Atomic Age";
   background-color: rgb(38, 38, 38);
@@ -83,11 +87,9 @@ body {
 
 @keyframes darkGlow {
   0% {
-    border-color: rgb(0, 0, 0);
     text-shadow: 0 0 0px rgb(0, 0, 0);
   }
   100% {
-    border-color: rgb(0, 2, 0);
-    text-shadow: 0 0 20px rgb(0, 0, 0);
+    text-shadow: 0 0 50px rgb(0, 0, 0);
   }
 }
