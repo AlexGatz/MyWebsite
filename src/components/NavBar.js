@@ -38,11 +38,8 @@ class NavBar extends Component {
           </Link>
         </div>
 
-        <div>
-          <span
-            className={hamburgerButtonStyle}
-            onClick={this.openNav.bind(this)}
-          >
+        <div className="NavBar-Button">
+          <span className={hamburgerButtonStyle} onClick={this.openNav}>
             &#9776;
           </span>
         </div>

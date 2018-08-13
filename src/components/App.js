@@ -11,15 +11,9 @@ class App extends Component {
     this.state = { hasMarginMoved: false };
   }
   handleNavBarStatus = isNavBarClosed => {
-    if (isNavBarClosed) {
-      console.log("Nav Bar is closed");
-      this.setState({ hasMarginMoved: false });
-      console.log(this.state.hasMarginMoved);
-    } else {
-      console.log("Nav Bar is open");
-      this.setState({ hasMarginMoved: true });
-      console.log(this.state.hasMarginMoved);
-    }
+    this.setState(
+      isNavBarClosed ? { hasMarginMoved: false } : { hasMarginMoved: true }
+    );
   };
   render() {
     let marginStyle = this.state.hasMarginMoved ? "marginMoved" : "marginLeft";
