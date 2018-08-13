@@ -7,8 +7,9 @@ class NavBar extends Component {
 		this.state = { open: true };
 	}
 
-	openNav() {
-		this.setState({ open: !this.state.open });
+	openNav = () => {
+		this.setState({ open: !this.state.open },
+			() => { this.props.navBarStatus(this.state.open) });
 	}
 	render() {
 		/* Is there a better way to do this?!?! */
@@ -47,6 +48,10 @@ class NavBar extends Component {
 			</div>
 		);
 	}
+}
+
+NavBar.propTypes = {
+	navBarStatus: React.PropTypes.func
 }
 
 export default NavBar;
