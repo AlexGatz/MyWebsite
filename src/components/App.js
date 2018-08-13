@@ -6,14 +6,29 @@ import "./App.css";
 import { Parallax } from "react-scroll-parallax";
 
 class App extends Component {
-  handleNavBarStatus = isNavBarOpen => {
-    //marginMoved or marginLeft css used based on boolean
+  constructor() {
+    super();
+    this.state = { hasMarginMoved: false };
+  }
+  handleNavBarStatus = isNavBarClosed => {
+    if (isNavBarClosed) {
+      console.log("Nav Bar is closed");
+      this.setState({ hasMarginMoved: false });
+      console.log(this.state.hasMarginMoved);
+    } else {
+      console.log("Nav Bar is open");
+      this.setState({ hasMarginMoved: true });
+      console.log(this.state.hasMarginMoved);
+    }
   };
   render() {
+    let marginStyle = this.state.hasMarginMoved ? "marginMoved" : "marginLeft";
     return (
-      <div className="">
+      <div>
         <NavBar navBarStatus={this.handleNavBarStatus} />
-        <Main />
+        <div className={marginStyle}>
+          <Main />
+        </div>
       </div>
     );
   }

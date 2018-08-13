@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./NavBar.css";
 
 class NavBar extends Component {
   constructor() {
@@ -19,7 +20,6 @@ class NavBar extends Component {
     let hamburgerButtonStyle = this.state.open
       ? "hamburgerButton"
       : "hamburgerButtonFaded";
-    let marginStyle = this.state.open ? "marginLeft" : "marginMoved";
 
     return (
       <div>
@@ -50,9 +50,5 @@ class NavBar extends Component {
     );
   }
 }
-
-NavBar.propTypes = {
-  navBarStatus: React.PropTypes.func
-};
 
 export default NavBar;
