@@ -9,10 +9,7 @@ body {
   border: 0%;
   padding: 0%;
   font-family: "Atomic Age";
-  background-color: rgb(38, 38, 38);
-  background-image: url("https://uploads.codesandbox.io/uploads/user/d9d5cefe-e7a3-4c81-9c8a-bbf46cd15d18/NoUC-pexels-photo-276092.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: rgb(165, 165, 165);
 }
 
 .marginLeft {
@@ -22,7 +19,7 @@ body {
 
 .marginMoved {
   transition: all 0.2s;
-  margin-left: 165px;
+  margin-left: 160px;
 }
 
 @keyframes darkGlow {
